@@ -141,7 +141,7 @@ const DownloadRulesTab: FC = () => {
             match: formData.match ?? initialRule.match,
             exclude: formData.exclude ?? initialRule.exclude,
             destination: formData.destination ?? initialRule.destination,
-            tags: formData.tags?.split(',') ?? initialRule.tags,
+            tags: formData.tags?.split(',').filter((tag) => tag.length > 0) ?? initialRule.tags,
             startOnLoad: formData.startOnLoad ?? initialRule.startOnLoad,
             isBasePath: formData.isBasePath ?? false,
           }).then(
